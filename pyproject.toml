@@ -1,0 +1,31 @@
+[project]
+authors = [
+    {email = "ka679@bath.ac.uk", name = "Kamran Arora"}
+]
+name = "flocking"
+version = "0.0.1"
+description = "Implementation of (stochastic) Cucker-Smale particle models and associated reduced (S)PDE models in Diffrax"
+readme = "README.md"
+requires-python = ">=3.10.0"
+dependencies = [
+    "diffrax>=0.7.0",
+    "lineax==0.0.8",
+]
+
+[project.optional-dependencies]
+experiments = [
+    "matplotlib>=3.10.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["flocking/*"]
+
+[tool.ruff.lint]
+unfixable = ["F401"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
